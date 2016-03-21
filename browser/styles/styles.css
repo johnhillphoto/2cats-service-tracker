@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+.white{
+  color: white;
+}
+.center-vert-nav {
+  position: relative;
+display: block;
+padding: 10px 15px;
+font-size: 1.5em;
+letter-spacing: 2px
+}
+.navbar {
+  vertical-align: middle;
+}
+.center-container {
+  width: 70%;
+  margin: auto;
+}
+h2 {
+  padding-bottom: 30px;
+}
+.input-box {
+  width: 50%;
+}
+.listProducts{
+  margin-top: 30px;
+  margin-bottom: 30px
+}
+.inline{
+  display: inline-block;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.glyphicon {
+  padding: 0 15px 0 15px;
+}
