@@ -2,6 +2,25 @@ var router = require('express').Router();
 module.exports = router;
 var Product = require('../.././model/db.js').Product;
 
+router.post('/update/:id/:priority', function(req, res, next){
+  Product.findOne({_id: req.params.id})
+  .then(function(product){
+    product.priority = req.params.priority;
+    product.save();
+  })
+  .then(function(product){
+    res.sendStatus(200);
+  }, next);
+});
+
+router.get('/onePriority', function(req, res, next){
+  Product.findOne({priority: 1})
+  .then(function(foundProduct){
+    res.json(foundProduct);
+  });
+
+});
+
 router.get('/', function(req, res, next){
   Product.find({})
   .then(function(products){
@@ -16,26 +35,13 @@ router.get('/:id', function(req, res, next){
   }, next);
 });
 
+
 router.post('/', function(req, res, next){
-  // console.log(req.body);
   Product.create(req.body)
   .then(function(product){
-    console.log("new product created ;", product);
-    res.redirect('/');
     res.sendStatus(200);
   }, next);
 });
-
-// router.delete('/:id', function(req, res, next){
-//   Product.remove({_id: req.params.id})
-//   .then(function(){
-//     console.log('one product deleted');
-//     return res.sendStatus(204);
-//   })
-//   .then(function(){
-//     res.redirect('/');
-//     }, next);
-// });
 
 router.delete('/:id', function(req, res, next){
   Product.remove({_id: req.params.id})

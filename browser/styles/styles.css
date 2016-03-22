@@ -7,9 +7,12 @@
 .center-vert-nav {
   position: relative;
 display: block;
-padding: 10px 15px;
+padding: 5px 5px;
 font-size: 1.5em;
 letter-spacing: 2px
+}
+.moveButton{
+  margin-left: 285px;
 }
 .navbar {
   vertical-align: middle;
@@ -36,6 +39,6 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
 }
-.glyphicon {
+.glyphicon-remove-circle {
   padding: 0 15px 0 15px;
 }
