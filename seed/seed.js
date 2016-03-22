@@ -13,14 +13,17 @@ var data = [
     { name: 'Claw Trimming',
       priority: 5
     },
-    { name: 'Brush Teeth',
-      priority: 3
+    { name: 'Catnip Meditation',
+      priority: 7
     },
     { name: 'Paw Pad Massage',
-      priority: 2
+      priority: 4
     },
     { name: 'Eye Goobie Removal',
       priority: 9
+    },
+    { name: 'Tree Climbing Experience',
+      priority: 2
     }
 ];
 
@@ -45,3 +48,5 @@ var dataMaker = function( next){
 };
 
 dataMaker();
+
+module.exports = dataMaker;

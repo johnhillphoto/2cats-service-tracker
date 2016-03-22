@@ -11,13 +11,19 @@ padding: 5px 5px;
 font-size: 1.5em;
 letter-spacing: 2px
 }
-.moveButton{
-  margin-left: 285px;
-}
+
 .navbar {
   vertical-align: middle;
 }
 .center-container {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.center-container-two {
   width: 70%;
   margin: auto;
 }
@@ -41,4 +47,10 @@ h2 {
 }
 .glyphicon-remove-circle {
   padding: 0 15px 0 15px;
+}
+li.white.center-vert-nav.bigger {
+    line-height: 2.2em;
+}
+.moreMargin{
+  margin: 12px;
 }

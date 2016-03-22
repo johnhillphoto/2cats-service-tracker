@@ -20,23 +20,23 @@
     <h2 class ="center-container">Two Cats Spa</h2>{{ testing}}
 
     <div class ="center-container">
-      <div class="input-group center-container input-box">
+      <div class="input-group input-box">
           <input name="name" type="text" class="form-control " id="name" placeholder="Treatment Name"  ng-model="formInfo.name">
       </div>
-      <div class="input-group center-container input-box">
+      <div class="input-group  input-box moreMargin">
           <input name="priority" type="number"  class="form-control" id="priority" placeholder="Priority" ng-model="formInfo.priority">
       </div>
-      <div class =" moveButton">
+      <div class ="">
         <button type="submit" class="btn btn-default" ng-click="addProduct()">Add Treatment</button>
       </div>
     </div>
     <!-- begin list of products -->
     <div class="listProducts">
-      <ul class ="list-group center-container">
+      <ul class ="list-group center-container-two">
         <li ng-repeat="product in products" class=" well well-sm list-group-item flex">
           <div class="">{{product.name}}</div>
           <div>
-            <span class="glyphicon glyphicon-arrow-up" ng-click="upPriority(product._id.toString())"></span>
+            <span class="glyphicon glyphicon-arrow-up" ng-show="product.priority !== 1" ng-click="upPriority(product._id.toString())"></span>
               <span class="glyphicon glyphicon-arrow-down" ng-click="downPriority(product._id.toString(), product.priority)"></span>
             <span class="glyphicon glyphicon-remove-circle" ng-click="deleteProduct(product._id.toString())"></span>
             <span class="badge">{{product.priority}}</span>
