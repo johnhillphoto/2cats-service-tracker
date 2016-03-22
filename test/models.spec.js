@@ -1,6 +1,6 @@
 var expect = require('chai').expect;
 var db = require('./model/db.js');
-var seed = require('../seed/seed.js')
+var seed = require('../seed/seed.js');
 var Product = db.Product;
 
 describe('model testing', function(){
@@ -11,4 +11,4 @@ describe('model testing', function(){
       });
 
   });
-});//end describe overall
+});

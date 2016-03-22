@@ -1,3 +1,4 @@
+//name this file something else.. app.js maybe?
 var twoCatsApp = angular.module('twoCatsApp', []);
 twoCatsApp.controller('catController', function($http, $scope, $log){
 
@@ -17,7 +18,8 @@ twoCatsApp.controller('catController', function($http, $scope, $log){
         $log.log('one product deleted inside angular');
       })
       .then(function(){
-
+        //what's this for?
+        //how about making $http.get('/products') to get updated product list
       }).catch($log.error);
   };//end deleteProduct
 

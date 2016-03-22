@@ -1,3 +1,4 @@
+//good.. make sure you can write this from scratch-- connect and disconnect
 //require as needed
 var Promise = require('bluebird');
 var mongoose = require('mongoose');

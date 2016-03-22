@@ -1,6 +1,7 @@
 var twoCatsApp = angular.module('twoCatsApp', []);
 twoCatsApp.controller('catController', function($http, $scope, $log){
 
+//or sort on the server?
 var getProducts = function(){
   $http.get('/api/products')
     .then(function(response){
@@ -18,7 +19,7 @@ getProducts();
     $http.delete('/api/products/'+_id)
       .then(function(response){
         $log.log('one product deleted inside angular');
-        getProducts();
+        getProducts();//good!
       }).catch($log.error);
   };//end deleteProduct
   $scope.formInfo = {};
@@ -28,10 +29,11 @@ getProducts();
     $http.post('/api/products/', $scope.formInfo)
     .then(function(response){
       $log.log('one product added inside angular');
-      getProducts();
+      getProducts();//good!
     }).catch($log.error);
   };
 
+  //see my solution-- I just ended up swapping products, then looping over them and setting priority to index
   $scope.upPriority = function(_id){
     $http.get('/api/products/onePriority')
     .then (function(response){

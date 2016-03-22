@@ -1,5 +1,4 @@
-var db = require('.././server/model/db.js');
-var Promise = require('bluebird');
+var db = require('../server/model/db.js');
 
 var Product = db.Product;
 
@@ -27,26 +26,12 @@ var data = [
     }
 ];
 
-var dataMaker = function( next){
+module.exports = function(){
   return db.connect()
     .then(function(){
-      return Promise.all([Product.remove()]);
+      return Product.remove();
     })
     .then (function(){
-      // console.log('data is', data);
-      var Promises = data.map(function(_product){
-        // console.log('a product is',_product);
-        return Product.create(_product);
-      });
-      // console.log(Promises);
-      return Promises;
-    })
-    .then (function(Promises){
-      Promise.all(Promises);
+      return Product.create(data);
     });
-
 };
-
-dataMaker();
-
-module.exports = dataMaker;
