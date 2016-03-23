@@ -30,7 +30,8 @@ var data = [
 var dataMaker = function( next){
   return db.connect()
     .then(function(){
-      return Promise.all([Product.remove()]);
+      return Promise.all([Product.remove({})]);
+      // Product.remove();
     })
     .then (function(){
       // console.log('data is', data);
@@ -48,5 +49,6 @@ var dataMaker = function( next){
 };
 
 dataMaker();
+
 
 module.exports = dataMaker;

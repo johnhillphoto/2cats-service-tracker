@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "seed": "CONN=mongodb://localhost/twoCatsTwo node ./seed/seed.js",
-    "start": "CONN=mongodb://localhost/twoCatsTwo nodemon ./server/server.js"
+    "start": "CONN=mongodb://localhost/twoCatsTwo nodemon ./server/server.js",
+    "test": "CONN=mongodb://localhost/twoCatsTwo node ./node_modules/mocha/bin/mocha"
   },
   "author": "",
   "license": "ISC",
